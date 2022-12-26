@@ -21,7 +21,6 @@ class Encrypt {
 
         for (i = 0; i < n; i++) {
             messageMatrix[i] = (text.charAt(i)) % 65;
-            x++;
         }
 
         // Matrix Multiplication key(nxn) * text (nx1)
