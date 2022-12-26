@@ -2,15 +2,14 @@ import java.util.*;
 
 class HillCipher extends Encrypt{
     public static void main(String... args){
-        
-        System.out.print("\nInput Length of text: ");
         Scanner sc = new Scanner(System.in);
-        int n = Integer.parseInt(sc.nextLine());
-
-        System.out.print("\nInput text: ");
+        
+        System.out.print("\ntext: ");
         String text = sc.nextLine();
 
-        System.out.print("\nInput key: ");
+        int n = text.length();
+
+        System.out.print("\nkey: ");
         String key = sc.nextLine();
 
         new HillCipher().encrypt(key,text,n);
