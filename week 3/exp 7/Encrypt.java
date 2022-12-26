@@ -42,10 +42,10 @@ class Encrypt {
         String encrypted = "";
         
         for (i = 0; i < n; i++) {
-            encrypted += (char)(cipherMatrix[i]+65);           
+            encrypted += (char)(cipherMatrix[i]+65);  // Implicit Type Casting         
         }
 
-        System.out.println("Encrypted String as: "+encrypted);
+        System.out.println("\nEncrypted String as: "+encrypted);
 
 
     }

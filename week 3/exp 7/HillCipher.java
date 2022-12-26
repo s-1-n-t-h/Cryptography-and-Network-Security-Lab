@@ -3,7 +3,7 @@ import java.util.*;
 class HillCipher extends Encrypt{
     public static void main(String... args){
         
-        System.out.print("Input Length of text: ");
+        System.out.print("\nInput Length of text: ");
         Scanner sc = new Scanner(System.in);
         int n = Integer.parseInt(sc.nextLine());
 
