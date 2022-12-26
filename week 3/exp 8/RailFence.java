@@ -42,7 +42,7 @@ class RailFence {
     }
     public static void main(String[] args){
 
-        System.out.print("\n\t\t\t\t\tRAIL_FENCE CIPHER TECHNIQUEt: ");
+        System.out.print("\n\t\t\t\t\tRAIL_FENCE CIPHER TECHNIQUE: ");
 
         Scanner sc = new Scanner(System.in);
 
