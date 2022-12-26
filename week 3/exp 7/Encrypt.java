@@ -49,7 +49,4 @@ class Encrypt {
 
 
     }
-    public static void main(String[] args){
-        new Encrypt().encrypt("GYBNQKURP","ACT", 3);
-    }
 }
