@@ -6,7 +6,10 @@ class RailFence {
         int length = text.length();
         int cols = Math.ceilDiv(length, depth);
         int rows = depth;
-        String splittedText[][] = new String[rows][cols];
+        System.out.println(length);
+        System.out.println(rows);
+        System.out.println(cols);
+        char splittedText[][] = new char[rows][cols];
         int count,i,j;
         
         // i points the index of text
@@ -18,17 +21,26 @@ class RailFence {
                 j = 0;
                 count = 0;
             }
-            splittedText[i%2][j++] = Character.toString(text.charAt(i));
+            splittedText[i%2][j++] = text.charAt(i);
             count++;
         }
 
-        // print the 2D array
-        for (i = 0; i < length; i++) {
-            for(j=0;j < depth;j++){
-                System.out.println(splittedText[i][j]);
-            }
+        if (cols != (length/depth)){
+            splittedText[rows-1][cols-1] = '*';
         }
 
+        // print the 2D array
+        try{
+            for (i = 0; i < depth; i++) {
+                for(j=0;j < length;j++){
+                    System.out.print(splittedText[i][j]);
+                }
+                System.out.println();
+            }
+        }
+        catch(Exception e){
+            System.out.println(e.toString());
+        }
     }
     public static void main(String[] args){
 
