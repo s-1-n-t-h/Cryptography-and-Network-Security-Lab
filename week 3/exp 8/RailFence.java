@@ -23,19 +23,21 @@ class RailFence {
                                                     // 2. O D O N N *
             count++;
         }
-
+        // In case of any empty column like in above example
         if (cols != (length/depth)){
             splittedText[rows-1][cols-1] = '*';
         }
 
-        // print the 2D array
+        // extracting Cypher Text
+        String cypher = "";
 
         for (i = 0; i < rows; i++) {
-            for(j=0;j < cols;j++){
-                System.out.print(splittedText[i][j]);
+            for(j = 0; j< cols; j++){
+                cypher += splittedText[i][j];
             }
-            System.out.println();
         }
+
+        System.out.print("\nCypher text: "+cypher);
         
     }
     public static void main(String[] args){
