@@ -1,5 +1,3 @@
-import java.util.*;
-
 class Encrypt {
 
     void encrypt(String key, String text,int n){
@@ -49,4 +47,6 @@ class Encrypt {
 
 
     }
+    public static void main(String[] args){}
 }
+
