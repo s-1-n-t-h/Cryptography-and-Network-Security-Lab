@@ -47,12 +47,11 @@ class RailFence {
         int cols = Math.ceilDiv(length, depth);
         int rows = depth;
 
-        //StringBuilder[][] splitted = new StringBuilder[rows][cols];
+        String[] splitted = new String[depth]; // stores sub strings needed for decryption G OMRIG | ODONN*
 
-        String[] splitted = new String[depth];
         int offset = 0;
         for(int i =0; i<rows; i++){
-            splitted[i] = text.substring(offset,offset+cols);
+            splitted[i] = text.substring(offset,offset+cols); // offset is updated for reaching next block's starting element
             offset += cols;
         }
 
