@@ -64,7 +64,7 @@ class RailFence {
             k++;
         }
         actual = actual.replace("*", "");
-        System.out.println(actual);
+        System.out.println("Actual Text: "+actual);
         
     }
     public static void main(String[] args){
