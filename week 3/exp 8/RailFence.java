@@ -44,18 +44,29 @@ class RailFence {
 
     void decrypt(String text, int depth){
         int length = text.length();
-        int cols = depth;
-        int subLength = length/2;
+        int cols = Math.ceilDiv(length, depth);
+        int rows = depth;
 
-        String p1 = text.substring(0,subLength);
-        String p2 = text.substring(subLength);
+        //StringBuilder[][] splitted = new StringBuilder[rows][cols];
 
-        String actual = "";
-        for(int i = 0; i < subLength; i++){
-            actual += (p1.substring(i,i+1) + p2.substring(i,i+1));
+        String[] splitted = new String[depth];
+        int offset = 0;
+        for(int i =0; i<rows; i++){
+            splitted[i] = text.substring(offset,offset+cols);
+            offset += cols;
         }
 
-        System.out.print(actual);
+        String actual = "";
+        int k = 0;
+        while( k!= cols){
+            for (int i = 0; i < rows; i++) {
+                    actual += splitted[i].charAt(k);
+            }
+            k++;
+        }
+        actual = actual.replace("*", "");
+        System.out.println(actual);
+        
     }
     public static void main(String[] args){
 
