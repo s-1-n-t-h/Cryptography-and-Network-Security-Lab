@@ -2,7 +2,7 @@ import java.util.*;
 import java.lang.Math;
 class RailFence {
 
-    void encrypt(String text, int depth){
+    String encrypt(String text, int depth){
         int length = text.length();
         int cols = Math.ceilDiv(length, depth);
         int rows = depth;
@@ -19,7 +19,7 @@ class RailFence {
                 j++; // shifiting j to point to next column
                 count = 0; // re initialize count to avoid replacing the data 
             }
-            splittedText[i%2][j] = text.charAt(i);  // 1. G O M R I G
+            splittedText[i%depth][j] = text.charAt(i);  // 1. G O M R I G
                                                     // 2. O D O N N *
             count++;
         }
@@ -37,8 +37,25 @@ class RailFence {
             }
         }
 
-        System.out.print("\nCypher text: "+cypher);
+        System.out.println("\nCypher text: "+cypher);
+        return cypher;
         
+    }
+
+    void decrypt(String text, int depth){
+        int length = text.length();
+        int cols = depth;
+        int subLength = length/2;
+
+        String p1 = text.substring(0,subLength);
+        String p2 = text.substring(subLength);
+
+        String actual = "";
+        for(int i = 0; i < subLength; i++){
+            actual += (p1.substring(i,i+1) + p2.substring(i,i+1));
+        }
+
+        System.out.print(actual);
     }
     public static void main(String[] args){
 
@@ -52,6 +69,7 @@ class RailFence {
         System.out.print("\nDepth: ");
         int depth = sc.nextInt();
 
-        new RailFence().encrypt(text, depth);
+        String cypher = new RailFence().encrypt(text, depth);
+        new RailFence().decrypt(cypher, depth);
     }
 }
