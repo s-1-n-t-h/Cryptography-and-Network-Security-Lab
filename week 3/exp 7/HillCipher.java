@@ -12,7 +12,9 @@ class HillCipher extends Encrypt{
         System.out.print("\nkey: ");
         String key = sc.nextLine();
 
-        new HillCipher().encrypt(key,text,n);
+        String cipherText = new HillCipher().encrypt(key,text,n);
+
+        
 
     }
 }

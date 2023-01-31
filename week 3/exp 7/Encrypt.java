@@ -1,6 +1,6 @@
 class Encrypt {
 
-    void encrypt(String key, String text,int n){
+    String encrypt(String key, String text,int n){
 
         int keyMatrix[][] = new int[n][n];
         int messageMatrix[] = new int[n];
@@ -44,6 +44,7 @@ class Encrypt {
 
         System.out.println("\nEncrypted String as: "+encrypted);
 
+        return encrypted;
 
     }
     public static void main(String[] args){}
