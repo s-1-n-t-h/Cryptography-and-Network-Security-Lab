@@ -1,9 +1,10 @@
 import java.util.Scanner;
 
-class Decrypt {
+class Decrypt extends Encrypt{
 
-    String encrypt(String key, String text,int n){
+    String decrypt(String text,int n){
 
+        Scanner sc = new Scanner(System.in);
         int keyMatrix[][] = new int[n][n];
         int messageMatrix[] = new int[n];
         int cipherMatrix[] = new int[n];
@@ -11,10 +12,11 @@ class Decrypt {
         int x,i,j;
 
         // Input KEY matrix
+        System.out.println("\nEnter Inverse Matreix: ");
         x = 0;
         for(i=0;i<n;i++){
             for(j=0;j<n;j++){
-                keyMatrix[i][j] = (key.charAt(x))%65; // modulo 65 gives index of alphabet in alphabet series starting from 0
+                keyMatrix[i][j] = sc.nextInt(); // modulo 65 gives index of alphabet in alphabet series starting from 0
                 x++;
             }
         }
@@ -44,7 +46,7 @@ class Decrypt {
             encrypted += (char)(cipherMatrix[i]+65);  // Implicit Type Casting         
         }
 
-        System.out.println("\nEncrypted String as: "+encrypted);
+        System.out.println("\nDecrypted String as: "+encrypted);
 
         return encrypted;
 

@@ -1,6 +1,4 @@
 import java.util.*;
-import java.io.*;
-import java.lang.*;
 
 public class simpColTrans {
     public static void main(String[] args) {
@@ -32,6 +30,7 @@ public class simpColTrans {
             default:
                 break;
         }
+        scan.close();
     }
 
     public static String encryptCT(String key, String text) {

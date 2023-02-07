@@ -1,6 +1,6 @@
 import java.util.*;
 
-class HillCipher extends Encrypt{
+class HillCipher extends Decrypt{
     public static void main(String... args){
         Scanner sc = new Scanner(System.in);
         
@@ -14,7 +14,7 @@ class HillCipher extends Encrypt{
 
         String cipherText = new HillCipher().encrypt(key,text,n);
 
-        
+        //new HillCipher().decrypt(cipherText,cipherText.length())
 
     }
 }
